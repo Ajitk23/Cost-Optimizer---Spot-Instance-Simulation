@@ -1,20 +1,36 @@
-# Cost-Optimizer : Spot-Instance-Simulation
-I am building a Databricks-based simulation tool that demonstrates the cost savings when using spot instances compared to on-demand instances for Spark jobs. This project teaches cost optimization principles for cloud data processing, which is a critical skill for modern data engineers and analysts.
+# Cost Optimizer – Spot Instance Simulation
 
-📌 In simple terms:
+## 📌 Project Overview
 
-Companies run big data jobs (e.g., Spark jobs for data processing).
+This project is an **educational Databricks notebook** that **simulates and visualizes cost savings** when running sample Spark jobs on **spot instances** versus **on-demand instances** in the cloud.
 
-Cloud providers charge differently for on-demand instances (always available) vs spot instances (cheaper but can be interrupted anytime).
-The Cost Optimizer Notebook lets a user:
-  
-  1. Pick job type (e.g., word count, data aggregation)
-  
-  2. Pick data size, instance type, job duration
-  
-  3. Simulate how much that job would cost on on-demand vs spot instances
-  
-  4. See the cost difference visualized as a chart
+It helps **students, data engineers, and analysts** learn **how to reduce cloud computing costs** by understanding the pricing difference between spot and on-demand compute resources.
 
-This helps people understand cost savings and make better cloud decisions.
+---
+
+## 🎯 Business Requirement
+
+Cloud providers like AWS, Azure, and GCP offer **spot instances** (unused compute capacity sold at a discount) and **on-demand instances** (always available but more expensive).  
+Running big data jobs on spot instances can save significant money — but comes with trade-offs like possible interruption.
+
+This notebook shows how:
+- The same Spark job (e.g., word count, data aggregation)
+- Can cost much less if run on spot instances instead of on-demand
+- By simulating job runtime, data size, and instance pricing
+- And displaying the cost difference clearly with easy-to-read charts
+
+---
+
+## ⚙️ Tech Stack
+
+- **Language:** Python (≥3.8)
+- **Processing:** PySpark
+- **Platform:** Azure Databricks
+- **Visualization:** matplotlib
+- **Version Control:** Git + GitHub
+- **Data:** Static CSV sample + JSON pricing file
+
+---
+
+## 📂 Project Structure
 
