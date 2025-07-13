@@ -1,0 +1,14 @@
+{
+  "D4_v3": {
+    "on_demand": 0.2,
+    "spot": 0.06
+  },
+  "E8s_v4": {
+    "on_demand": 0.34,
+    "spot": 0.1
+  },
+  "F8s_v2": {
+    "on_demand": 0.22,
+    "spot": 0.07
+  }
+}
