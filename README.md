@@ -8,13 +8,13 @@ Companies run big data jobs (e.g., Spark jobs for data processing).
 Cloud providers charge differently for on-demand instances (always available) vs spot instances (cheaper but can be interrupted anytime).
 The Cost Optimizer Notebook lets a user:
   
-  Pick job type (e.g., word count, data aggregation)
+  1. Pick job type (e.g., word count, data aggregation)
   
-  Pick data size, instance type, job duration
+  2. Pick data size, instance type, job duration
   
-  Simulate how much that job would cost on on-demand vs spot instances
+  3. Simulate how much that job would cost on on-demand vs spot instances
   
-  See the cost difference visualized as a chart
+  4. See the cost difference visualized as a chart
 
 This helps people understand cost savings and make better cloud decisions.
 
