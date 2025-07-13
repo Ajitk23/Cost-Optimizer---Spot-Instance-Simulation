@@ -33,4 +33,16 @@ This notebook shows how:
 ---
 
 ## 📂 Project Structure
+cost-optimizer-simulation/
+├── notebooks/
+│ └── main_simulation_notebook.ipynb
+├── src/
+│ ├── spark_simulator.py
+│ ├── cost_calculator.py
+│ ├── visualization.py
+├── data/
+│ ├── pricing.json
+│ └── sample_data.csv
+├── README.md
+└── requirements.txt
 
