@@ -3,7 +3,7 @@
 
 import matplotlib.pyplot as plt
 
-def plot_cost_comparison(cost_data):
+def plot_cost_comparison(cost_data, save_path = None):
     labels = ['On-Demand', 'Spot', 'Savings']
     values = [
         cost_data["on_demand_cost"],
