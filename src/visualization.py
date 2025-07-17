@@ -1,15 +1,13 @@
-# visualization.py
-# Thi smodule will create cost comparision charts using matplotlib
+# src/visualization.py
+# This module will create cost comparison charts using matplotlib
 
 import matplotlib.pyplot as plt
 
-
-def plot_cost_comparision(cost_data):
-
-    labels = ['onDemand', 'spot', 'savings']
+def plot_cost_comparison(cost_data):
+    labels = ['On-Demand', 'Spot', 'Savings']
     values = [
-        cost_data["onDemandCost"],
-        cost_data["spotCost"],
+        cost_data["on_demand_cost"],
+        cost_data["spot_cost"],
         cost_data["savings"]
     ]
 
@@ -24,4 +22,13 @@ def plot_cost_comparision(cost_data):
     plt.show()
 
 
-
+# Optional test block (for direct script testing)
+if __name__ == "__main__":
+    test_data = {
+        "instance_type": "D4_v3",
+        "runtime_hours": 5,
+        "on_demand_cost": 2.40,
+        "spot_cost": 0.85,
+        "savings": 1.55
+    }
+    plot_cost_comparison(test_data)
