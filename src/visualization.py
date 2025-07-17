@@ -24,4 +24,4 @@ def plot_cost_comparision(cost_data):
     plt.show()
 
 
-plot_cost_comparision(cost_data)    
+
