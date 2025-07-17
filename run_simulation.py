@@ -3,7 +3,7 @@
 
 import matplotlib.pyplot as plt
 
-def plot_cost_comparison(cost_data):
+def plot_cost_comparison(cost_data, save_path=None):  # <-- FIXED HERE
     labels = ['On-Demand', 'Spot', 'Savings']
     values = [
         cost_data["on_demand_cost"],
@@ -19,8 +19,6 @@ def plot_cost_comparison(cost_data):
     plt.ylabel("Cost ($)")
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
-
-
 
     if save_path:
         plt.savefig(save_path)
@@ -38,4 +36,4 @@ if __name__ == "__main__":
         "spot_cost": 0.85,
         "savings": 1.55
     }
-    plot_cost_comparison(test_data)
+    plot_cost_comparison(test_data, save_path="artifacts/test_chart.png")
