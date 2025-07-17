@@ -1,39 +1,33 @@
-# src/visualization.py
-# This module will create cost comparison charts using matplotlib
+# run_simulation.py
 
-import matplotlib.pyplot as plt
+import argparse
+from src.spark_simulator import run_word_count, run_aggregation_job
+from src.cost_calculator import calculate_cost
+from src.visualization import plot_cost_comparison
 
-def plot_cost_comparison(cost_data, save_path=None):  # <-- FIXED HERE
-    labels = ['On-Demand', 'Spot', 'Savings']
-    values = [
-        cost_data["on_demand_cost"],
-        cost_data["spot_cost"],
-        cost_data["savings"]
-    ]
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--job", choices=["wordcount", "aggregation"], required=True)
+    parser.add_argument("--instance_type", required=True)
+    parser.add_argument("--runtime_hours", type=float, required=True)
+    parser.add_argument("--save_plot", action="store_true")
+    args = parser.parse_args()
 
-    colors = ['skyblue', 'orange', 'lightgreen']
+    # Run Spark Job
+    if args.job == "wordcount":
+        run_word_count()
+    elif args.job == "aggregation":
+        run_aggregation_job()
 
-    plt.figure(figsize=(8, 5))
-    plt.bar(labels, values, color=colors)
-    plt.title(f"Cost Comparison for {cost_data['instance_type']} ({cost_data['runtime_hours']} hrs)")
-    plt.ylabel("Cost ($)")
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
-    plt.tight_layout()
+    # Calculate cost
+    cost_data = calculate_cost(args.instance_type, args.runtime_hours)
 
-    if save_path:
-        plt.savefig(save_path)
-        print(f"📸 Chart saved to: {save_path}")
+    # Visualize
+    if cost_data:
+        plot_cost_comparison(
+            cost_data,
+            save_path="artifacts/plot.png" if args.save_plot else None
+        )
 
-    plt.show()
-
-
-# Optional test block (for direct script testing)
 if __name__ == "__main__":
-    test_data = {
-        "instance_type": "D4_v3",
-        "runtime_hours": 5,
-        "on_demand_cost": 2.40,
-        "spot_cost": 0.85,
-        "savings": 1.55
-    }
-    plot_cost_comparison(test_data, save_path="artifacts/test_chart.png")
+    main()
