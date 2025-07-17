@@ -33,7 +33,7 @@ Cost-Optimizer---Spot-Instance-Simulation/
 │ ├── cost_calculator.py # Cost calculations
 │ └── visualization.py # Bar chart generator
 │
-├── run_simulation.py # ✅ Main CLI entry point
+├── run_simulation.py # Main CLI entry point
 ├── requirements.txt
 ├── README.md
 └── .gitignore
