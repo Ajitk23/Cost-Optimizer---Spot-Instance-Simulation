@@ -49,6 +49,22 @@ Cost-Optimizer---Spot-Instance-Simulation/
 git clone https://github.com/Ajitk23/Cost-Optimizer---Spot-Instance-Simulation.git
 cd Cost-Optimizer---Spot-Instance-Simulation
 
+✅ 2. Create a virtual environment
+create -p venv python=3.11 -y
+conda activate ./venv
+
+✅ 3. Install dependencies
+pip install -r requirements.txt
+
+▶ How to Run
+
+🟡 Word Count Simulation
+python run_simulation.py --job wordcount --instance_type D4_v3 --runtime_hours 5 --save_plot
+
+🔵 Aggregation Simulation
+python run_simulation.py --job aggregation --instance_type D4_v3 --runtime_hours 3 --save_plot
+Use --save_plot to save the chart to artifacts/
+
 📊 Output Sample
 You’ll see bar charts comparing:
 
